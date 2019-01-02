@@ -11,3 +11,5 @@ Username: %s
 #Password: %s
 '''  % (username)
 #print(info)
+
+endswith
