@@ -12,4 +12,3 @@ Username: %s
 '''  % (username)
 #print(info)
 
-endswith
