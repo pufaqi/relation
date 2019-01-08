@@ -55,7 +55,7 @@ def _CHECK_USER_NAME():
 #创建目录和文件
 file = 'userinfo'
 mkdir_dir(file)  # 调用函数
-
+kkk
 #代码开始
 select = input("请选择登录（1）或者注册（2）：")
 _CHECK_USER_LOCK()
