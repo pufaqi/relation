@@ -27,16 +27,13 @@ while longo_count < 3:
             userinfo_user = 'userinfo\\user_name.txt'
             userinfo_pass = 'userinfo\\user_passwd.txt'
             userinfo_lock = 'userinfo\\user_lock.txt'
-            with open(userinfo_user) as file_object:
-                for line in file_object:
-                    if line == username:
-                        print("登录成功")
-                        #with open(userinfo_pass) as file_object:
-                            #for line in file_object:
-                                #if line == password:
-                                    #print("登录成功")
-                    else:
-                        print("用户名不存在，请先注册")
+            lock_user = open(userinfo_lock,'r+')
+            lock_list = lock_user.readlines()
+            for lock_line in lock_list:
+                lock_line = lock_line.strip('\n')
+                if username == lock_list:
+                    sys.exit('用户 %s 已经被锁定，退出' % username)
+            lock_user.close()
         else:
             print("用户被锁，请联系管理员！")
             break
