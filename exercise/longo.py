@@ -18,7 +18,6 @@ userinfo_pass = 'userinfo\\user_passwd.txt'
 userinfo_lock = 'userinfo\\user_lock.txt'
 #检查文件函数
 def _CHECK_USERINFO(file_name):
-    global check_line
     check_user = open(file_name,'r+')
     check_list = check_user.readline()
     check_user.close()
