@@ -2,6 +2,7 @@
 #-*- coding:utf-8 -*-
 # Author:loftybay
 import os
+import sys
 #创建目录函数
 def _MAKE_DIR(path):
     folder = os.path.exists(path)
@@ -24,22 +25,18 @@ def _CHECK_USER_LOCK():
         check_line = check_line.strip('\n')
         if username == check_line:
             print("用户已经被锁定，请联系管理员！")
-            break
+            sys.exit()
 #检查用户是否存在
 def _CHECK_USER_NAME():
     check_user = open(userinfo_user, 'r+')
     check_list = check_user.readlines()
-    print(check_list)   #测试输出
+    #print(check_list)   #测试输出
     check_user.close()
     for check_line in check_list:
-        print(check_list)
+        #print(check_list)
         check_line = check_line.strip('\n')
         if username == check_line:
             _HELLO_PORT()
-            print("用户存在")
-            break
-        elif username != check_line:
-            print("用户不存在")
             break
 
 '''
