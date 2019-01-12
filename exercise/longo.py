@@ -37,9 +37,21 @@ def _CHECK_USER_NAME():
     for check_line in check_list:
         check_line = check_line.strip('\n')
         if username == check_line:
-            _HELLO_PORT()
+            #_HELLO_PORT()
             break
 
+#检查注册时的密码是否相同
+def _CHECK_PASSWORD():
+    passwordA = input("请输入密码：")
+    passwordB = input("请再次输入密码：")
+    #b = [passwordA,passwordB]
+    if not passwordA.strip():
+        print("密码不能为空")
+        sys.exit()
+    if passwordA == passwordB:
+        print("注册成功")
+    if passwordA != passwordB:
+        print("两次输入的密码不同,请再次输入")
 #创建目录和文件
 file = 'userinfo'
 _MAKE_DIR(file)  # 调用函数
@@ -59,3 +71,4 @@ if select == "1":
 elif select == "2":
     username = input("请输入你要注册的用户名")
     _CHECK_USER_NAME()
+    _CHECK_PASSWORD()
