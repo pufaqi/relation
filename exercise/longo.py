@@ -39,7 +39,7 @@ def _CHECK_USER_NAME():
         if username == check_line:
             #_HELLO_PORT()
             break
-
+#print ("123")
 #检查注册时的密码是否相同
 def _CHECK_PASSWORD():
     passwordA = input("请输入密码：")
